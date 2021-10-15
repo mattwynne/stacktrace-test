@@ -6,8 +6,8 @@ This project is an attempt to make a minimal reproducible example.
 
 To reproduce, clone the repo, then:
 
-		npm install
-		npm run start:ts
+    npm install
+    npm run start:ts
 
 You should see:
 
