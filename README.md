@@ -2,7 +2,7 @@
 
 It seems that if we try to use the [V8 stack trace API](https://v8.dev/docs/stack-trace-api) to get an array of structured `CallSite` objects when using ts-node, those objects don't have the correct line numbers or columns on them.
 
-This project is an attempt to make a minimal reproducable example.
+This project is an attempt to make a minimal reproducible example.
 
 To reproduce, clone the repo, then:
 
