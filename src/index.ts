@@ -1,11 +1,14 @@
+import { wrapCallSite } from "@cspotcode/source-map-support";
+
 const myFunction = () => {
-  const original = Error.prepareStackTrace || (() => {});
+  const original = Error.prepareStackTrace || (() => { });
   Error.prepareStackTrace = (error, stack) => {
     console.log("Stack trace passed to Error.prepareStackTrace:");
     console.log(
       stack.map(
-        (stackFrame) =>
-          `${stackFrame.getFileName()}:${stackFrame.getLineNumber()}:${stackFrame.getColumnNumber()}`
+        wrapCallSite
+      ).map(stackFrame =>
+        `${stackFrame.getFileName()}:${stackFrame.getLineNumber()}:${stackFrame.getColumnNumber()}`
       )
     );
     console.log("Stack trace rendered by Error.stack:");
